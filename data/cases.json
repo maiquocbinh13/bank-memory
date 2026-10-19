@@ -1,0 +1,318 @@
+[
+  {
+    "id": "C001",
+    "title": "Client Onboarding Slowdown",
+    "context": "New private-market client onboarding took 6+ weeks due to manual document collection and compliance checks. Documents were collected in scattered folders, email chains, and vendor portals.",
+    "outcome": "Implemented automated document verification and pre-checked KYC templates, reducing onboarding from 5 days to 2 days.",
+    "lessons": "Do not batch KYC checks - they take longer per document when parallelized. Early compliance check reduces rework. Centralize documents in a single source of truth.",
+    "checklist": [
+      "Collect KYC documents in a single standardized intake form",
+      "Run automated document verification before compliance review",
+      "Pre-check KYC templates to identify missing documents early",
+      "Use a single source of truth for all client documents"
+    ],
+    "do": [
+      "Automated document verification",
+      "Pre-checked KYC templates",
+      "Early compliance review before contract drafting"
+    ],
+    "avoid": [
+      "Batch KYC checks (they slow down per document)",
+      "Manual document collection without a central template",
+      "Waiting until the end to run compliance checks"
+    ],
+    "template": "Client Onboarding Template: [Document types] [Verification steps] [Timeline targets] [Compliance checkpoints]",
+    "best_practice": "Automate document collection before compliance review; use pre-checked KYC templates",
+    "common_pitfall": "Batching KYC documents slows verification; early compliance check reduces rework",
+    "resolution_time_days": 2,
+    "risk_level": "medium",
+    "owner": "Q. Tran (operations)",
+    "added_at": "2026-10-18",
+    "tags": ["onboarding", "compliance", "client onboarding", "KYC"],
+    "type": "operations"
+  },
+  {
+    "id": "C002",
+    "title": "Contract Review Bottleneck",
+    "context": "150+ contracts processed monthly. Legal team did manual clause review; ~3 ambiguous terms per 100. Review took 3+ days per batch.",
+    "outcome": "Legal spent 20% of time on review. Improved with clause checklists; reduced review time by 60%.",
+    "lessons": "Regularly update the clause database - new regulations require database updates every quarter. Always have human lawyers review automated extractions.",
+    "checklist": [
+      "Use a clause detection database updated quarterly",
+      "Flag ambiguous terms automatically during drafting",
+      "Cross-verify with external regulatory requirements",
+      "Have a human lawyer review automated extractions"
+    ],
+    "do": [
+      "Clause checklists",
+      "Automated clause detection",
+      "Cross-verification with external requirements"
+    ],
+    "avoid": [
+      "Manual clause review without tooling",
+      "Waiting until contract is complete to review",
+      "Ignoring regulation updates"
+    ],
+    "template": "Contract review checklist: [Clause types] [Ambiguity flags] [Regulatory cross-checks] [Timeline estimate]",
+    "best_practice": "Build a standard clause library; flag ambiguous terms early",
+    "common_pitfall": "Manual review misses ~3 ambiguous terms per 100 contracts",
+    "resolution_time_days": 1,
+    "risk_level": "high",
+    "owner": "Q. Tran (legal)",
+    "added_at": "2026-10-18",
+    "tags": ["contracts", "legal", "review"],
+    "type": "legal"
+  },
+  {
+    "id": "C003",
+    "title": "Data Migration Legacy System",
+    "context": "Migrated 5 years of client records to a new DB. 12% of records had mismatched fields. Required manual validation.",
+    "outcome": "Required manual validation. Identified need for automated data profiling and schema mapping.",
+    "lessons": "Always run parallel loads and compare hashes before decommissioning legacy systems.",
+    "checklist": [
+      "Run validation scripts before migration",
+      "Compare hashes between old and new systems",
+      "Document schema mapping before migration",
+      "Run parallel loads during migration"
+    ],
+    "do": [
+      "Data validation pipeline",
+      "Checksum comparison between systems",
+      "Schema validation scripts"
+    ],
+    "avoid": [
+      "Decommissioning legacy systems without validation",
+      "Skipping hash comparison",
+      "Relying on manual validation only"
+    ],
+    "template": "Data migration checklist: [Schema mapping] [Hash comparison] [Validation results] [Go/No-Go decision]",
+    "best_practice": "Validate at the boundary; compare hashes before decommissioning legacy systems",
+    "common_pitfall": "12% of records had mismatched fields without automated validation",
+    "resolution_time_days": 5,
+    "risk_level": "high",
+    "owner": "A. Nguyen (engineering)",
+    "added_at": "2026-10-18",
+    "tags": ["data migration", "legacy", "validation", "schema"],
+    "type": "engineering"
+  },
+  {
+    "id": "C004",
+    "title": "Client Escalation - Missed Deadline",
+    "context": "Client escalated after a 3-week delay in a digitization project. Root cause: unmapped task dependencies across teams.",
+    "outcome": "Implemented dependency tracking; reduced delay incidents by 40%.",
+    "lessons": "Map task dependencies; flag blockers early; communicate proactively.",
+    "checklist": [
+      "Map all task dependencies before starting",
+      "Flag blockers 3 days before deadline",
+      "Communicate delays proactively to clients",
+      "Document decision ownership at handoff"
+    ],
+    "do": [
+      "Dependency tracking tool",
+      "Early warning system",
+      "Proactive client communication"
+    ],
+    "avoid": [
+      "Waiting until the day before deadline to warn",
+      "Ignoring early blockers",
+      "Not documenting task dependencies"
+    ],
+    "template": "Escalation early-warning checklist: [Task dependencies] [Blockers] [Deadline timeline] [Client notification template]",
+    "best_practice": "Proactive communication after a delay prevents client escalation - notify before they ask",
+    "common_pitfall": "Reactive communication after a delay leads to client escalation and lost trust",
+    "resolution_time_days": 0,
+    "risk_level": "medium",
+    "owner": "R. Sharma (operations)",
+    "added_at": "2026-10-18",
+    "tags": ["escalation", "deadline", "dependencies", "client"],
+    "type": "client_success"
+  },
+  {
+    "id": "C005",
+    "title": "Quote Estimation Inaccuracy",
+    "context": "Sales quotes were 20-40% off actual effort. Team relied on intuition without a standard estimation process.",
+    "outcome": "Created a basic estimation template; reduced error to 10%.",
+    "lessons": "Break quotes into components; compare estimate vs actual over time.",
+    "checklist": [
+      "Break quote into components (labor, tools, timeline, risk buffer)",
+      "Track estimate vs actual for every quote",
+      "Update estimation template with actuals after each project"
+    ],
+    "do": [
+      "Estimation template",
+      "Estimate vs actual tracking",
+      "Component-based breakdown"
+    ],
+    "avoid": [
+      "Relying on intuition for quotes",
+      "Skipping component breakdown",
+      "Not comparing estimates to actuals"
+    ],
+    "template": "Quote estimation template: [Labor] [Tools] [Timeline] [Risk buffer] [Final quote] [Estimate vs actual]",
+    "best_practice": "Break quotes into components; compare estimate vs actual over time",
+    "common_pitfall": "20-40% off actual effort due to intuition-based estimation",
+    "resolution_time_days": 1,
+    "risk_level": "medium",
+    "owner": "S. Park (sales)",
+    "added_at": "2026-10-18",
+    "tags": ["quotes", "estimation", "accuracy", "template"],
+    "type": "sales"
+  },
+  {
+    "id": "C006",
+    "title": "Squad Rebalancing Under Rush",
+    "context": "Peak load: 3 engineers dropped off. Manual reallocation caused 2 people to be overloaded. Silent overload went unnoticed.",
+    "outcome": "Built a simple workload tracker; prevented silent overload in follow-up periods.",
+    "lessons": "Track availability and skill sets; use constraint-aware assignment.",
+    "checklist": [
+      "Track availability and skill sets before assignment",
+      "Use constraint-aware assignment (not just simple allocation)",
+      "Update workload tracker after each sprint",
+      "Alert when 2+ people are at capacity"
+    ],
+    "do": [
+      "Workload tracker with skill matching",
+      "Constraint-aware task assignment",
+      "Regular availability updates"
+    ],
+    "avoid": [
+      "Manual reallocation without tracking",
+      "Ignoring availability data",
+      "Not updating workload during peak"
+    ],
+    "template": "Squad rebalancing checklist: [Availability] [Skills] [Tasks] [Capacity check] [Assignment] [Overload alert]",
+    "best_practice": "Track availability and skill sets; use constraint-aware assignment",
+    "common_pitfall": "Manual reallocation causes silent overload; 2 people overloaded during peak",
+    "resolution_time_days": 2,
+    "risk_level": "medium",
+    "owner": "R. Kumar (engineering)",
+    "added_at": "2026-10-18",
+    "tags": ["resource", "availability", "constraint", "rebalancing"],
+    "type": "operations"
+  },
+  {
+    "id": "C007",
+    "title": "Duplicate Report Generation",
+    "context": "3 analysts independently produced similar status reports for the same client. No shared template existed.",
+    "outcome": "Created a shared template + search index; reduced duplicate work by 50%.",
+    "lessons": "Centralize templates; enable quick lookup of past work.",
+    "checklist": [
+      "Create a shared template repository",
+      "Add search index to find past reports quickly",
+      "Enforce template usage for client reports"
+    ],
+    "do": [
+      "Shared template repository",
+      "Search index for past reports",
+      "Template usage enforcement"
+    ],
+    "avoid": [
+      "Analysts creating similar reports independently",
+      "No shared template repository",
+      "No search index for past work"
+    ],
+    "template": "Report template: [Header] [Client info] [Status] [Key metrics] [Next steps] [Archive path]",
+    "best_practice": "Centralize templates; enable quick lookup of past work",
+    "common_pitfall": "3 analysts produced similar reports independently, wasting 50% of report time",
+    "resolution_time_days": 1,
+    "risk_level": "low",
+    "owner": "L. Chen (analytics)",
+    "added_at": "2026-10-18",
+    "tags": ["duplication", "templates", "knowledge sharing"],
+    "type": "knowledge"
+  },
+  {
+    "id": "C008",
+    "title": "API Integration Failure",
+    "context": "Third-party market data API failed silently, causing 20% missing data in client reports. No monitoring or fallback.",
+    "outcome": "Added schema validation + retry/fallback logic; improved reliability.",
+    "lessons": "Validate at the boundary; implement monitoring and fallbacks.",
+    "checklist": [
+      "Add schema validation at API boundary",
+      "Implement retry logic with fallback data source",
+      "Add monitoring and alerting for failures"
+    ],
+    "do": [
+      "Schema validation",
+      "Retry/fallback logic",
+      "API monitoring"
+    ],
+    "avoid": [
+      "Silent API failures",
+      "No schema validation",
+      "No fallback data source"
+    ],
+    "template": "API integration checklist: [Schema] [Retry logic] [Fallback source] [Monitoring] [Alert thresholds]",
+    "best_practice": "Validate at the boundary; implement monitoring and fallbacks",
+    "common_pitfall": "Silent API failures caused 20% missing data in client reports",
+    "resolution_time_days": 3,
+    "risk_level": "high",
+    "owner": "A. Patel (engineering)",
+    "added_at": "2026-10-18",
+    "tags": ["api", "integration", "error handling", "monitoring"],
+    "type": "engineering"
+  },
+  {
+    "id": "C009",
+    "title": "Compliance Check Miss",
+    "context": "Two new institutional clients onboarded with missing regulatory disclosures. Manual review was delayed and inconsistent.",
+    "outcome": "Legal added a compliance checklist; reduced future misses to zero.",
+    "lessons": "Use structured checklists; cross-verify with external requirements.",
+    "checklist": [
+      "Use structured compliance checklists",
+      "Cross-verify with external requirements",
+      "Add compliance review at client onboarding"
+    ],
+    "do": [
+      "Compliance checklist",
+      "Cross-verification with external requirements",
+      "Onboarding compliance review"
+    ],
+    "avoid": [
+      "Manual compliance review without checklists",
+      "Relying on client self-reporting",
+      "Skipping compliance checks at onboarding"
+    ],
+    "template": "Compliance checklist: [Regulatory requirements] [Disclosure items] [Verification steps] [Sign-off] [Archive]",
+    "best_practice": "Use structured checklists; cross-verify with external requirements",
+    "common_pitfall": "2 institutional clients onboarded with missing regulatory disclosures",
+    "resolution_time_days": 0,
+    "risk_level": "high",
+    "owner": "Q. Tran (legal)",
+    "added_at": "2026-10-18",
+    "tags": ["compliance", "regulatory", "checklist", "onboarding"],
+    "type": "legal"
+  },
+  {
+    "id": "C010",
+    "title": "Vendor Handoff Chaos",
+    "context": "Handoff of active projects to a vendor lacked documentation. Work took 3 days to resume after the handoff.",
+    "outcome": "Created a standardized handoff template + access guide.",
+    "lessons": "Document decisions, ownership, and next steps explicitly.",
+    "checklist": [
+      "Document all decisions at handoff",
+      "State ownership clearly",
+      "List next steps explicitly",
+      "Provide access guide for vendor"
+    ],
+    "do": [
+      "Standardized handoff template",
+      "Access guide",
+      "Decision documentation"
+    ],
+    "avoid": [
+      "Handoffs without documentation",
+      "Vague ownership statements",
+      "Missing access guides"
+    ],
+    "template": "Handoff template: [Project summary] [Decisions] [Ownership] [Next steps] [Access guide] [Timeline] [Contact]",
+    "best_practice": "Document decisions, ownership, and next steps explicitly",
+    "common_pitfall": "Vendor handoff without documentation caused 3 days to resume work",
+    "resolution_time_days": 3,
+    "risk_level": "medium",
+    "owner": "L. Nguyen (operations)",
+    "added_at": "2026-10-18",
+    "tags": ["handoff", "vendor", "documentation", "continuity"],
+    "type": "client_success"
+  }
+]
